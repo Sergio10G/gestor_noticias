@@ -1,0 +1,56 @@
+body{
+    /*
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    */
+}
+
+.contenedor_padre{
+    margin-top: 75px;
+    margin-bottom: 75px;
+    /*
+    width: 80% !important;
+    height: max-content !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    */
+
+    border: 1px solid black;
+}
+
+header{
+
+}
+
+#cabecera{
+    height: 20vh;
+    background: url(../img/fondo2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+
+}
+
+#cabecera h1{
+    text-align: center;
+    color: white;
+    font-size: 80px;
+    height: 100% !important;
+}
+
+.contenedor{
+
+}
+
+section{
+
+}
+
+aside{
+
+}
