@@ -19,7 +19,7 @@
 
         $sesion_iniciada = false;
 
-        define('admin_email', 'admin');
+        define('admin_email', 'admin@admin');
         define('admin_pass',  '1234');
         
         if($email == admin_email && $pass == admin_pass){
@@ -64,7 +64,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="fecha" class="form-label">Fecha</label>
-                                <input name="fecha" type="date" class="form-control" id="fecha" aria-describedby="emailHelp" required>
+                                <input name="fecha" type="date" class="form-control" id="fecha" aria-describedby="emailHelp">
                             </div>
                             <label for="tipo" class="form-label">Tipo</label>
                             <div class="mb-3">
@@ -108,7 +108,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="fecha" class="form-label">Fecha</label>
-                                <input name="fecha" type="date" class="form-control" id="fecha" aria-describedby="emailHelp" required>
+                                <input name="fecha" type="date" class="form-control" id="fecha" aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="enlace" class="form-label">Enlace</label>

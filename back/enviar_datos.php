@@ -8,6 +8,9 @@
     if(isset($_POST['fecha'])){
         $fecha = $_POST['fecha'];
     }
+    else{
+        $fecha = "";
+    }
 
     if(isset($_POST['enlace'])){
         $enlace = $_POST['enlace'];
