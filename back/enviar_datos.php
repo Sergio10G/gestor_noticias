@@ -1,0 +1,74 @@
+<?php
+    $link = mysqli_connect("localhost", "root", "", "WEB") or die("<h1>No se ha podido conectar con la base de datos</h1>");
+
+    if(isset($_POST['titulo'])){
+        $titulo = $_POST['titulo'];
+    }
+
+    if(isset($_POST['fecha'])){
+        $fecha = $_POST['fecha'];
+    }
+
+    if(isset($_POST['enlace'])){
+        $enlace = $_POST['enlace'];
+        if(substr($enlace, 0, 4) != "http"){
+            $enlace = "https://".$enlace;
+        }
+    }
+
+    if(isset($_POST['tipo'])){
+        $tipo = $_POST['tipo'];
+    }
+
+    if(isset($_POST['destinatario'])){
+        $destinatario = $_POST['destinatario'];
+    }
+
+    if(isset($_POST['noticia'])){
+        $noticia = $_POST['noticia'];
+    }
+
+    if(isset($_POST['fuente'])){
+        $fuente = $_POST['fuente'];
+    }
+
+    
+    if($_FILES['imagen'] !== null){
+            $imagen = $_FILES['imagen']; 
+        }
+    
+
+    if(isset($_POST['submit'])){
+        $submit = $_POST['submit'];
+    }
+    /*
+    foreach ($_FILES as $key => $archivo) {
+        echo $key.": <br>";
+        foreach ($archivo as $key2 => $value) {
+            echo "____".$key2." - ".$value."<br>";
+        }
+        echo "<hr>";
+    }
+    */
+?>
+
+<?php 
+    switch($submit){
+        case "galeria":
+            mysqli_query($link, "INSERT INTO GALERIA(TITULO, FECHA, TIPO, DESTINATARIO, NOTICIA, FUENTE, IMAGEN) VALUES
+            ('$titulo', '$fecha', '$tipo', '$destinatario', '$noticia', '$fuente', '".$imagen['name']."')");
+            move_uploaded_file($imagen['tmp_name'], "../img/".$imagen['name']);
+            echo "";
+            break;
+        
+        case "noticia":
+            mysqli_query($link, "INSERT INTO NOTICIAS(FECHA, TEXTO, ENLACE) VALUES
+            ('$fecha', '$titulo', '<a href=\"$enlace\" target=\"_blank\">Leer más...</a>')");
+            break;
+
+        default:
+            break;
+    }
+    mysqli_close($link);
+    header("refresh: 3; admin.php");
+?>

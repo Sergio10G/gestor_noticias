@@ -19,11 +19,11 @@
 
         $sesion_iniciada = false;
 
-        define('admin_email', 'sejobmx@hotmail.es');
-        define('admin_pass',  '1234abcd!');
+        define('admin_email', 'admin');
+        define('admin_pass',  '1234');
         
         if($email == admin_email && $pass == admin_pass){
-            echo "<h1 class='text-success'>Estás dentro.</h1>";
+            //echo "<h1 class='text-success'>Estás dentro.</h1>";
             $sesion_iniciada = true;
         }
         else{
@@ -57,7 +57,7 @@
             <div class="container border rounded " style="margin-top: 75px; margin-bottom: 100px;">
                 <div class="row align-items-end border-bottom p-3">
                     <div class="col-5">
-                        <form method="POST" action="modificar.php" enctype="multipart/form-data">
+                        <form enctype="multipart/form-data" method="POST" action="enviar_datos.php">
                             <div class="mb-3">
                                 <label for="titulo" class="form-label">Título</label>
                                 <input name="titulo" type="text" class="form-control" id="titulo" aria-describedby="emailHelp" required>
@@ -94,14 +94,14 @@
                             </div>
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Imagen</label>
-                                <input class="form-control" type="file" id="formFile" accept="image/*">
+                                <input name="imagen" class="form-control" type="file" id="formFile" accept="image/*">
                             </div>
                             <button name="submit" value="galeria" type="submit" class="btn btn-primary" style="width: 100%;">Enviar</button>
                         </form>
                     </div>
                     <div class="col"></div>
                     <div class="col-5 ">
-                        <form method="POST" action="modificar.php" enctype="multipart/form-data">
+                        <form method="POST" action="enviar_datos.php" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="titulo" class="form-label">Título</label>
                                 <input name="titulo" type="text" class="form-control" id="titulo" aria-describedby="emailHelp" required>

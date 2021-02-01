@@ -29,11 +29,16 @@
 
                         $sql = "SELECT * FROM GALERIA";
 
+                        $cont = 0;
+
+                        echo '<div class="row row-cols-2 g-4">';
+
                         if($result = mysqli_query($link, $sql)){
                             while($fila = mysqli_fetch_row($result)){
 
                                 echo "
-                                    <div class='card col' style='width: 18rem;'>
+                                <div class='col'>
+                                    <div class='card w-100 h-100 p-2' style='width: 18rem;'>
                                         <img src='img/".$fila[7]."' class='card-img-top' style='width: 356px; height:200px; object-fit: cover; border-radius: 5px;' alt='...'>
                                         <div class='card-body'>
                                             <h5 class='card-title'>".$fila[1]."</h5>
@@ -43,9 +48,11 @@
                                             <p style='float: left; font-style: italic; color: grey;'>".$fila[6]."</p>
                                             <p style='float: right; font-style: bold; color: grey;'>".$fila[2]."</p>
                                         </div>
-                                    </div>";
+                                    </div>
+                                </div>";
                             }
                         }
+                        echo "</div>";
                     ?>
                 </div>
             </section>
