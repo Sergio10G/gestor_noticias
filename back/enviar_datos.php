@@ -73,5 +73,5 @@
             break;
     }
     mysqli_close($link);
-    header("refresh: 3; admin.php");
+    header("refresh: 1; admin.php");
 ?>

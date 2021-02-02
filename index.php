@@ -57,7 +57,7 @@
                 </div>
             </section>
             <div class="col"></div>     <!-- COLUMNA DE ESPACIO AUTOMÁTICO -->
-            <aside class="col-3">       <!-- COLUMNA DE ENLACES DE LA DERECHA -->
+            <aside class="col-3 g-4">       <!-- COLUMNA DE ENLACES DE LA DERECHA -->
                 <?php
                     $sql2 = "SELECT * FROM NOTICIAS";
 

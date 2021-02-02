@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BACK</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
@@ -21,12 +21,21 @@
 
         define('admin_email', 'admin@admin');
         define('admin_pass',  '1234');
+
+        $usu1 = ['email' => admin_email, 'pass' => admin_pass];
+        $usuarios_admitidos = [];
+        array_push($usuarios_admitidos, $usu1);
         
-        if($email == admin_email && $pass == admin_pass){
-            //echo "<h1 class='text-success'>Estás dentro.</h1>";
-            $sesion_iniciada = true;
+        foreach($usuarios_admitidos as $usuario_admitido){
+            if($email == $usuario_admitido['email']){
+                if($pass == $usuario_admitido['pass']){
+                    //echo "<h1 class='text-success'>Estás dentro.</h1>";
+                    $sesion_iniciada = true;
+                }
+            }
         }
-        else{
+
+        if(!$sesion_iniciada){
             echo "<h1 class='text-danger'>¿¿Quién eres tú y qué haces aquí??</h1>";
         }
     ?>
@@ -55,6 +64,9 @@
 
             echo '
             <div class="container border rounded " style="margin-top: 75px; margin-bottom: 100px;">
+                <div class="row">
+                    <center><h1>BACK DEL NOTICIERO</h1></center>
+                </div>
                 <div class="row align-items-end border-bottom p-3">
                     <div class="col-5">
                         <form enctype="multipart/form-data" method="POST" action="enviar_datos.php">
@@ -120,49 +132,62 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Título</th>
-                                    <th scope="col">Fecha</th>
-                                </tr>
-                            </thead>
-                            <tbody>';
-            foreach($galeria as $item){
-                echo 
-                "<tr>
-                    <th scope='row'>".$item[0]."</th>
-                    <td>".$item[1]."</td>
-                    <td>".$item[2]."</td>
-                </tr>";
-            }
+                        <form method="POST" action="modificar_datos.php" enctype="multipart/form-data">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Título</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Selección</th>
+                                    </tr>
+                                </thead>
+                                <tbody>';
+                foreach($galeria as $item){
+                    echo 
+                    "<tr>
+                        <th scope='row'>".$item[0]."</th>
+                        <td>".$item[1]."</td>
+                        <td>".$item[2]."</td>
+                        <td><input type='checkbox' name='seleccion_galeria[]' value='".$item[0]."'></td>
+                    </tr>";
+                }
             echo '
-                            </tbody>
-                        </table>
+                                    </form>
+                                </tbody>
+                            </table>
+                            <button name="submit" value="borrar_galeria" type="submit" class="btn btn-danger" style="width: 49%;">Borrar</button>
+                            <input type="reset" class="btn btn-primary" style="width: 49%;">
+                        </form>
                     </div>
                     <div class="col">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Título</th>
-                                    <th scope="col">Fecha</th>
-                                </tr>
-                            </thead>
-                            <tbody>';
+                        <form method="POST" action="modificar_datos.php" enctype="multipart/form-data">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Título</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Selección</th>
+                                    </tr>
+                                </thead>
+                                <tbody>';
             foreach($noticias as $noticia){
                 echo '
                 <tr>
                     <th scope="row">'.$noticia[0].'</th>
                     <td>'.$noticia[2].'</td>
                     <td>'.$noticia[1].'</td>
+                    <td><input type="checkbox" name="seleccion_noticias[]" value="'.$noticia[0].'"></td>
                 </tr>
                 ';
             }
             echo '
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                            <button name="submit" value="borrar_noticias" type="submit" class="btn btn-danger" style="width: 49%;">Borrar</button>
+                            <input type="reset" class="btn btn-primary" style="width: 49%;">
+                        </form>
                     </div>
                 </div>
             </div>
