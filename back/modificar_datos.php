@@ -41,9 +41,10 @@
                 break;
 
             default:
-                # code...
+                echo "<h1 class='text-danger'>ERROR $accion</h1>";
                 break;
         }
+        mysqli_close($link);
         header("refresh:1; admin.php");
     ?>
 </body>

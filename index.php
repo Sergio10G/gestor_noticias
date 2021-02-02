@@ -15,10 +15,15 @@
     
     <div class="container contenedor_padre">
         <header class="row">            <!-- BANNER SUPERIOR DE LA PÁGINA -->
-            <div class="col" id="cabecera">
-                <h1>Noticiero Illinois</h1>
+            <div class="col h-100" id="cabecera">
+                <h1 class="align-self-center">Noticiero Illinois</h1>
             </div>
         </header>
+        <div class="row p-2">
+            <a href="busqueda.php" target="_blank">
+                <button class="btn btn-success w-100">Prueba nuestro nuevo buscador!</button>
+            </a>
+        </div>
 
         <div class="container row">     <!-- COLUMNA DE NOTICIAS DE LA IZQUIERDA -->
             <section class="col-8">

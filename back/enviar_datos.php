@@ -73,5 +73,6 @@
             break;
     }
     mysqli_close($link);
-    header("refresh: 1; admin.php");
+    $url = "admin.php?";
+    header("refresh: 1; admin.php?titulo=$titulo&noticia=$noticia");
 ?>
