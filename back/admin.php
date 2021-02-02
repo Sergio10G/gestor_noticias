@@ -67,8 +67,9 @@
                 <div class="row border-bottom">
                     <center><h1>BACK DEL NOTICIERO</h1></center>
                 </div>
-                <div class="row align-items-end border-bottom p-3">
+                <div class="row align-items-start border-bottom p-3">
                     <div class="col-5">
+                        <center><h1>GALERÍA</h1></center>
                         <form enctype="multipart/form-data" method="POST" action="enviar_datos.php">
                             <div class="mb-3">
                                 <label for="titulo" class="form-label">Título</label>
@@ -113,6 +114,7 @@
                     </div>
                     <div class="col"></div>
                     <div class="col-5 ">
+                        <center><h1>NOTICIAS</h1></center>
                         <form method="POST" action="enviar_datos.php" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="titulo" class="form-label">Título</label>
@@ -133,6 +135,8 @@
                 <div class="row">
                     <div class="col">
                         <form method="POST" action="modificar_datos.php" enctype="multipart/form-data">
+                            <button name="submit" value="borrar_galeria" type="submit" class="btn btn-danger" style="width: 49%;">Borrar</button>
+                            <input type="reset" class="btn btn-primary" style="width: 49%;">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -149,7 +153,7 @@
                     echo 
                     "<tr>
                         <th scope='row'>".$item[1]."</th>
-                        <td>".$item[2]."</td>
+                        <td>".substr($item[2], 0, 10)."</td>
                         <td>".$item[3]." ".$item[4]."</td>
                         <td>".substr($item[5], 0, 30)."..."."</td>
                         <td><img src='../img/".$item[7]."' style='width:75px; object-fit: cover;'></td>
@@ -160,12 +164,12 @@
                                     </form>
                                 </tbody>
                             </table>
-                            <button name="submit" value="borrar_galeria" type="submit" class="btn btn-danger" style="width: 49%;">Borrar</button>
-                            <input type="reset" class="btn btn-primary" style="width: 49%;">
                         </form>
                     </div>
                     <div class="col">
                         <form method="POST" action="modificar_datos.php" enctype="multipart/form-data">
+                        <button name="submit" value="borrar_noticias" type="submit" class="btn btn-danger" style="width: 49%;">Borrar</button>
+                        <input type="reset" class="btn btn-primary" style="width: 49%;">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -179,7 +183,7 @@
                 echo '
                 <tr>
                     <th scope="row">'.$noticia[2].'</th>
-                    <td>'.$noticia[1].'</td>
+                    <td>'.substr($noticia[1], 0, 10).'</td>
                     <td><input type="checkbox" name="seleccion_noticias[]" value="'.$noticia[0].'"></td>
                 </tr>
                 ';
@@ -187,8 +191,6 @@
             echo '
                                 </tbody>
                             </table>
-                            <button name="submit" value="borrar_noticias" type="submit" class="btn btn-danger" style="width: 49%;">Borrar</button>
-                            <input type="reset" class="btn btn-primary" style="width: 49%;">
                         </form>
                     </div>
                 </div>

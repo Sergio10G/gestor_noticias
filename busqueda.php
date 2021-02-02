@@ -111,7 +111,7 @@
         <div class="row border-bottom">
             <center><h1>BÚSQUEDA</h1></center>
         </div>
-        <div class="row align-items-end border-bottom p-3">
+        <div class="row align-items-start border-bottom p-3">
             <div class="col-5">
                 <center><h2>GALERÍA</h2></center>
                 <form method="POST" action="busqueda.php" enctype="multipart/form-data">
