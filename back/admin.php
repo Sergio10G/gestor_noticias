@@ -67,7 +67,7 @@
                 <div class="row border-bottom">
                     <center><h1>BACK DEL NOTICIERO</h1></center>
                 </div>
-                <div class="row align-items-start border-bottom p-3">
+                <div class="row align-items-end border-bottom p-3">
                     <div class="col-5">
                         <center><h1>GALERÍA</h1></center>
                         <form enctype="multipart/form-data" method="POST" action="enviar_datos.php">
