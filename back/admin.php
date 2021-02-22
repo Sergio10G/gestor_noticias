@@ -21,10 +21,15 @@
             $pass = null;
         }
 
-        $sesion_iniciada = false;
+        //$sesion_iniciada = false;
 
         define('admin_email', 'admin@admin');
         define('admin_pass',  '1234');
+
+        session_start();
+        if(!isset($_SESSION["sesion_iniciada"])){
+            $_SESSION["sesion_iniciada"] = false;
+        }
 
         $usu1 = ['email' => admin_email, 'pass' => admin_pass];
         $usuarios_admitidos = [];
@@ -34,14 +39,14 @@
             if($email !== null && $email == $usuario_admitido['email']){
                 if($pass !== null && $pass == $usuario_admitido['pass']){
                     //echo "<h1 class='text-success'>Estás dentro.</h1>";
-                    $sesion_iniciada = true;
+                    $_SESSION["sesion_iniciada"] = true;
                 }
             }
         }
     ?>
 
     <?php 
-        if($sesion_iniciada){
+        if($_SESSION["sesion_iniciada"]){
             $link = mysqli_connect("localhost", "root", "", "WEB");
             $link -> set_charset("utf8");
             
