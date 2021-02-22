@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS GALERIA(
     PRIMARY KEY(COD)
 );
 
-DROP TABLE GALERIA;
+#DROP TABLE GALERIA;
 
 INSERT INTO GALERIA(TITULO, TIPO, DESTINATARIO, NOTICIA, FUENTE, IMAGEN) VALUES 
 ("EL CAMBIO CLIMÁTICO EN EL MUNDO MODERNO", "INTERNACIONAL", "ADULTO", 
@@ -40,7 +40,7 @@ Mega-incendios", "GREENPEACE", "cambioclima.png"),
 ("RESTOS DEL PALEOLÍTICO EN PARLA", "NACIONAL", "JUVENIL", "Fue descubierto a finales del XIX por unos caminantes franceses que incluyeron en su libro de viajes un grabado de los restos de la antigua Iglesia gótico-mudéjar de Humanejos de los Santos Justo y Pastor que estaba ubicada en mitad de un cerro, actualmente solo queda una pintura de dicha iglesia dibujada por Jenaro Pérez de Villaamil a mediados del siglo XIX en la cual se puede ver el paisaje a su alrededor. En el siglo XX, más concretamente en la década de los ochenta, la extinta diputación llevó a cabo investigaciones. En 1982 se realizaron unas excavaciones donde se encontraron diversos restos arqueólogos en el denominado yacimiento del cerro de la iglesia de Humanejos, ya que este fue el origen de la investigación, aunque no sería hasta la construcción de la autovía A-42 y el desarrollo del polígono industrial Pau 5 en 2008 cuando el yacimiento realmente emergió. Diez años de trabajos arqueológicos y excavaciones han dado su fruto pues se ha descubierto uno de los mayores hallazgos en décadas y aún falta mucho por excavar. Comenzó con una extensión de 2,5 hectáreas y en 2018 ya supera las 20 hectáreas.", 
 "UCM ARQUEO", "restospaleo.png");
 
-TRUNCATE TABLE GALERIA;
+#TRUNCATE TABLE GALERIA;
 
 SELECT * FROM GALERIA;
 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS NOTICIAS(
     PRIMARY KEY(COD)
 );
 
-DROP TABLE NOTICIAS;
+#DROP TABLE NOTICIAS;
 
 INSERT INTO NOTICIAS(TEXTO, ENLACE) VALUES
 ("GANÍMEDES EMITE UNA SEÑAL, DETECTADA POR LA NASA", 
@@ -61,6 +61,6 @@ INSERT INTO NOTICIAS(TEXTO, ENLACE) VALUES
 ("EXPLOSIÓN DE GAS EN EL CENTRO DE MADRID", 
 "<a href='https://elpais.com/espana/madrid/2021-01-20/explosion-en-un-edificio-del-centro-de-madrid.html' target='_BLANK'>Explosión en Madrid</a>");
 
-TRUNCATE TABLE NOTICIAS;
+#TRUNCATE TABLE NOTICIAS;
 
 SELECT * FROM NOTICIAS;

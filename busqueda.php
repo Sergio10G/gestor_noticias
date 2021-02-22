@@ -75,7 +75,7 @@
             $opcion = null;
         }
 
-        $link = mysqli_connect("localhost", "root", "", "web");
+        $link = mysqli_connect("localhost", "root", "", "WEB");
 
         $array_galeria = null;
         $array_noticias = null;

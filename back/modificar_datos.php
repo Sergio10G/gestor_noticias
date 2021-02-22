@@ -23,7 +23,7 @@
             $cods_noticias = $_POST['seleccion_noticias'];
         }
 
-        $link = mysqli_connect("localhost", "root", "", "web");
+        $link = mysqli_connect("localhost", "root", "", "WEB");
     ?>
     <?php 
         echo "<h1>Borrando...</h1>";
@@ -45,7 +45,8 @@
                 break;
         }
         mysqli_close($link);
-        header("refresh:1; admin.php");
+        //header("refresh:1; admin.php");
+        header("location: admin.php");
     ?>
 </body>
 </html>

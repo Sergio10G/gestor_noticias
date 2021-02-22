@@ -29,7 +29,7 @@
             <section class="col-8">
                 <div class='row'>
                     <?php
-                        $link = mysqli_connect("localhost", "root", "", "web");
+                        $link = mysqli_connect("localhost", "root", "", "WEB");
                         $link -> set_charset("utf8");
 
                         $sql = "SELECT * FROM GALERIA";

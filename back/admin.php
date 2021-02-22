@@ -42,7 +42,7 @@
 
     <?php 
         if($sesion_iniciada){
-            $link = mysqli_connect("localhost", "root", "", "web");
+            $link = mysqli_connect("localhost", "root", "", "WEB");
             $link -> set_charset("utf8");
             
             $galeria = [];
