@@ -20,7 +20,7 @@
             </div>
         </header>
         <div class="row p-2">
-            <a href="busqueda.php" target="_blank">
+            <a href="busqueda.php">
                 <button class="btn btn-success w-100">Prueba nuestro nuevo buscador!</button>
             </a>
         </div>

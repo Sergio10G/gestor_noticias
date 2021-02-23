@@ -6,6 +6,7 @@
     <title>ADMIN</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
@@ -68,7 +69,7 @@
             
 
             echo '
-            <div class="container border rounded " style="margin-top: 75px; margin-bottom: 100px;">
+            <div class="container border rounded contenedor_padre" style="margin-top: 75px; margin-bottom: 100px;">
                 <div class="row border-bottom">
                     <center><h1>BACK DEL NOTICIERO</h1></center>
                 </div>
@@ -204,7 +205,7 @@
         }
         else{
             echo '
-            <div class="container border p-4" style="margin-top: 200px;">
+            <div class="container border p-4 contenedor_padre" style="margin-top: 200px;">
                 <div class="row">
                     <center><h1>ACCESO DE MANTENIMIENTO</h1></center>
                 </div>
@@ -216,6 +217,9 @@
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Contraseña</label>
                         <input name="password" type="password" class="form-control" id="exampleInputPassword1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style="color: grey">Tip: email: admin@admin - pass: 1234</label>
                     </div>
                     <!--
                     <div class="mb-3 form-check">

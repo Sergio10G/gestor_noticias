@@ -5,6 +5,8 @@ body{
     justify-content: center;
     align-items: center;
     */
+
+    background: url("../img/fondo1.png");
 }
 
 .contenedor_padre{
@@ -22,6 +24,7 @@ body{
 
     border: 1px solid black;
     box-shadow: 0px 0px 5px #ccc;
+    background: white;
 }
 
 header{
