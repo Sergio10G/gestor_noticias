@@ -200,6 +200,12 @@
                         </form>
                     </div>
                 </div>
+                <form method="POST" action="botones_fondo.php">
+                    <div class="row">
+                        <input type="submit" class="btn btn-primary col" name="front" value="Volver al front">
+                        <input type="submit" class="btn btn-danger col-4" name="cerrar" value="Cerrar sesión">
+                    </div>
+                </form>
             </div>
             ';
         }
